@@ -11,4 +11,4 @@ sudo cp -f ssdt-csc3551.aml /boot
 sudo cp -f 01_acpi /etc/grub.d
 
 sudo chmod +x /etc/grub.d/01_acpi
-sudo update-grub
+sudo grub2-mkconfig -o /etc/grub2-efi.cfg 
