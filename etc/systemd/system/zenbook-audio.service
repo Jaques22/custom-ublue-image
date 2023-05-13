@@ -1,0 +1,14 @@
+[Unit]
+Before=systemd-user-sessions.service
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=!/var/lib/zenbook3402-audio
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/zenbook3402-audio.sh
+ExecStartPost=/usr/bin/touch /var/lib/zenbook3402-audio
+RemainAfterExit=false
+
+[Install]
+WantedBy=multi-user.target
