@@ -6,7 +6,7 @@ ConditionPathExists=!/var/lib/zenbook3402-audio
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/zenbook3402-audio.sh
+ExecStart=/usr/bin/zenbook3402-audio.sh
 ExecStartPost=/usr/bin/touch /var/lib/zenbook3402-audio
 RemainAfterExit=false
 
