@@ -1,6 +1,6 @@
 # Starting point
 
-[![build-ublue](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
+[![build-ublue](https://github.com/jaques22/custom-ublue-image/actions/workflows/build.yml/badge.svg)](https://github.com/jaques22/custom-ublue-image/actions/workflows/build.yml)
 
 This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
 
@@ -13,7 +13,7 @@ See the [Make Your Own -page in the documentation](https://ublue.it/making-your-
 Don't worry, it only requires some basic knowledge about using the terminal and git.
 
 > **Note**
-> Everywhere in this repository, make sure to replace `ublue-os/startingpoint` with the details of your own repository. Unless you used [`create-ublue-image`](https://github.com/EinoHR/create-ublue-image), in which case the previous repo identifier should already be your repo's details.
+> Everywhere in this repository, make sure to replace `jaques22/custom-ublue-image` with the details of your own repository. Unless you used [`create-ublue-image`](https://github.com/EinoHR/create-ublue-image), in which case the previous repo identifier should already be your repo's details.
 
 ## Customization
 
@@ -32,7 +32,7 @@ If you want to execute custom shell scripts or commands in the image build, you 
 
 Instead, you can create shell scripts in the `scripts/` directory (look at the `example.sh`). After creating your scripts, enable them in the `scripts:` section of your `recipe.yml`, within the specific "build stage" category where the scripts are intended to be executed.
 
-Read [the README in the `scripts/` directory](https://github.com/ublue-os/startingpoint/blob/main/scripts/README.md) for more information.
+Read [the README in the `scripts/` directory](https://github.com/jaques22/custom-ublue-image/blob/main/scripts/README.md) for more information.
 
 ### Custom package repositories
 
@@ -84,13 +84,13 @@ The files `/usr/etc/profile.d/ublue-firstboot.sh` and `/usr/etc/skel.d/.config/a
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/startingpoint:latest
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:latest
 ```
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/startingpoint:20230403
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:20230403
 ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
@@ -122,6 +122,6 @@ Check the [just website](https://just.systems) for tips on modifying and adding 
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
-    cosign verify --key cosign.pub ghcr.io/ublue-os/startingpoint
+    cosign verify --key cosign.pub ghcr.io/jaques22/custom-ublue-image
 
 If you're forking this repo, the uBlue website has [instructions](https://ublue.it/making-your-own/) for setting up signing properly.
