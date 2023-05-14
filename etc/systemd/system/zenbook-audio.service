@@ -8,7 +8,7 @@ ConditionPathExists=!/var/lib/zenbook3402-audio
 Type=oneshot
 ExecStart=/usr/bin/zenbook3402-audio.sh
 ExecStartPost=/usr/bin/touch /var/lib/zenbook3402-audio
-RemainAfterExit=false
+RemainAfterExit=true
 
 [Install]
 WantedBy=multi-user.target
