@@ -85,7 +85,7 @@ flatpaks:
   - org.gustavoperedo.FontDownloader
   - com.github.tchx84.Flatseal
   - io.github.celluloid_player.Celluloid
-  - md.obsidian.obsidian
+  - md.obsidian.Obsidian
   - com.discordapp.Discord
   - com.spotify.Client
   - com.protonvpn.www
