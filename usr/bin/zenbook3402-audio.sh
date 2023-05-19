@@ -3,15 +3,23 @@
 # and similar laptops using the same chip. 
 
 # set -oue pipefail
+#
+if [[ -f "/var/lib/zenbook3402-audio" ]]
+then 
+  exit 0
+fi
 
-mkdir /tmp/audio-build && cd /tmp/audio-build
+mkdir /tmp/audio-build 
+cd /tmp/audio-build
 curl https://raw.githubusercontent.com/thor2002ro/asus_zenbook_ux3402za/main/Sound/ssdt-csc3551.dsl -o ssdt-csc3551.dsl
 curl https://raw.githubusercontent.com/thor2002ro/asus_zenbook_ux3402za/main/Sound/01_acpi -o 01_acpi
 
 iasl -tc ssdt-csc3551.dsl
 
-sudo cp -f ssdt-csc3551.aml /boot
-sudo cp -f 01_acpi /etc/grub.d
+cp -f ssdt-csc3551.aml /boot
+cp -f 01_acpi /etc/grub.d
 
-sudo chmod +x /etc/grub.d/01_acpi
-sudo grub2-mkconfig -o /etc/grub2-efi.cfg 
+chmod +x /etc/grub.d/01_acpi
+grub2-mkconfig -o /etc/grub2-efi.cfg
+
+/usr/bin/touch /var/lib/zenbook3402-audio
