@@ -4,9 +4,9 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=simple
+Type=exec
 ExecStart=/usr/bin/zenbook3402-audio.sh
-#RemainAfterExit=true
+RemainAfterExit=true
 
 [Install]
 WantedBy=multi-user.target
