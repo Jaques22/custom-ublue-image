@@ -11,7 +11,7 @@ ARG RECIPE
 # see issue #28 (https://github.com/ublue-os/startingpoint/issues/28)
 COPY etc /usr/etc
 COPY usr /usr
-
+COPY wizard.sh /usr/bin/wizard.sh
 # copy scripts
 RUN mkdir /tmp/scripts
 COPY scripts /tmp/scripts
@@ -32,3 +32,5 @@ RUN rm -rf \
         /tmp/* \
         /var/* && \
     ostree container commit
+
+ENTRYPOINT ["/usr/bin/wizard.sh"]
