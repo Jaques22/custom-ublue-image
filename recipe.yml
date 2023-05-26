@@ -56,21 +56,20 @@ rpm:
     # apps and binaries require it, so it's a good idea to always include it
     # if you ever download or compile any custom software on your machine.
     - libadwaita
+
+    # Add your own below:
     - zsh
     - rclone
     - neovim
     - 'gcc-c++'
     - gh
     - iasl
-    # Add your own below:
+    
     # Example:
     # - tilix
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:
-    # Remove the native firefox (from Fedora) in favor of the Flatpak.
-    #- firefox
-    #- firefox-langpacks
 # These Flatpaks will be suggested for install after user login, via the yafti
 # "first boot" GUI. Everything below will be merged into the "yafti.yml" config
 # on build, in a category named "Custom". If you prefer, you can instead remove
@@ -78,9 +77,7 @@ rpm:
 # This is just an example selection.
 flatpaks:
   - org.mozilla.firefox
-  #- org.mozilla.Thunderbird
   - com.mattjakeman.ExtensionManager
-  #- org.libreoffice.LibreOffice
   - org.gnome.DejaDup
   - org.gustavoperedo.FontDownloader
   - com.github.tchx84.Flatseal
