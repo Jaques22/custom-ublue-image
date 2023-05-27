@@ -64,6 +64,7 @@ rpm:
     - 'gcc-c++'
     - gh
     - iasl
+    - https://download.copr.fedorainfracloud.org/results/@fedora-review/fedora-review-2192986-hyprland/fedora-38-x86_64/05870983-hyprland/hyprland-0.25.0-1.fc38.x86_64.rpm
     
     # Example:
     # - tilix
