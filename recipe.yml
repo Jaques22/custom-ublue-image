@@ -89,3 +89,4 @@ flatpaks:
   - com.spotify.Client
   - com.protonvpn.www
   - org.onlyoffice.desktopeditors
+  - xdg-desktop-portal-gnome
