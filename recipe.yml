@@ -73,7 +73,6 @@ rpm:
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:
-    - xdg-desktop-portal-gnome
 # These Flatpaks will be suggested for install after user login, via the yafti
 # "first boot" GUI. Everything below will be merged into the "yafti.yml" config
 # on build, in a category named "Custom". If you prefer, you can instead remove
