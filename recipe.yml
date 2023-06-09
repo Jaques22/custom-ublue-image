@@ -45,7 +45,7 @@ rpm:
   # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/jaques22/xdg-desktop-portal-hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-xdg-desktop-portal-hyprland-fedora-%FEDORA_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/jaques22/hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-hyprland-fedora-%FEDORA_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-%FEDORA_VERSION%/eddsalkield-swaylock-effects-fedora-%FEDORA_VERSION%.repo
+  #- https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-%FEDORA_VERSION%/eddsalkield-swaylock-effects-fedora-%FEDORA_VERSION%.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
   # performed via rpm-ostree during the image build, and will be pre-installed
@@ -72,7 +72,7 @@ rpm:
     - dunst
     - brightnessctl
     - fontawesome-fonts
-    - swaylock-effects
+    - swaylock
     - swayidle
     - swaybg
     
