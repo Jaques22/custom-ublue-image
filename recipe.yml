@@ -75,6 +75,7 @@ rpm:
     - swaylock
     - swayidle
     - swaybg
+    - network-manager-applet
     
     
     # Example:
