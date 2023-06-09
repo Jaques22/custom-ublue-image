@@ -76,7 +76,8 @@ rpm:
     - swayidle
     - swaybg
     - network-manager-applet
-    
+    - blueman
+    - blueman-nautilus
     
     # Example:
     # - tilix
