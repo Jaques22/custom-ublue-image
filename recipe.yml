@@ -74,7 +74,6 @@ rpm:
     - fontawesome-fonts
     - swaylock
     - swayidle
-    - swaybg
     - network-manager-applet
     - blueman
     - blueman-nautilus
