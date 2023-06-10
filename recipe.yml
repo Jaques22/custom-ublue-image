@@ -1,7 +1,6 @@
 # Warning: only edit this file inside the images git repository.
 # If you are looking at this file in your root directory on your computer, editing it does nothing.
 
-# The image will be at "ghcr.io/yourusername/name".
 name: custom-ublue-image
 # The native container image to build on top of.
 # Warning: Non-uBlue images might not function properly.
@@ -12,7 +11,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 # builds with the tag (all uBlue images do this).
 fedora-version: 38
 # This description will be visible in the container metadata.
-description: My slightly tweaked silverblue image based on ublue-os/silverblue-main 
+description: Universal Blue main (https://ublue.it/) but with hyprland and some additional packages.
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
 # Any files that aren't listed here won't be executed automatically, which
