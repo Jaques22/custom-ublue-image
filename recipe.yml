@@ -78,6 +78,7 @@ rpm:
     - network-manager-applet
     - blueman
     - blueman-nautilus
+    - udiskie # usb drive auto-mount 
     
     # Example:
     # - tilix
