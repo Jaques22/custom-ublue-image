@@ -42,8 +42,9 @@ rpm:
   repos:
   # Example (which also demonstrates version number expansion):
   # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/jaques22/xdg-desktop-portal-hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-xdg-desktop-portal-hyprland-fedora-%FEDORA_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/jaques22/hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-hyprland-fedora-%FEDORA_VERSION%.repo
+  #- https://copr.fedorainfracloud.org/coprs/jaques22/xdg-desktop-portal-hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-xdg-desktop-portal-hyprland-fedora-%FEDORA_VERSION%.repo
+  #- https://copr.fedorainfracloud.org/coprs/jaques22/hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-hyprland-fedora-%FEDORA_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-38/solopasha-hyprland-fedora-38.repo
   #- https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-%FEDORA_VERSION%/eddsalkield-swaylock-effects-fedora-%FEDORA_VERSION%.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -67,7 +68,8 @@ rpm:
     - iasl
     - xdg-desktop-portal-hyprland
     - hyprland
-    - waybar
+    - waybar-hyprland
+    - hyprpaper
     - dunst
     - brightnessctl
     - fontawesome-fonts
