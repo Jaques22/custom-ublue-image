@@ -79,6 +79,7 @@ rpm:
     - blueman
     - blueman-nautilus
     - udiskie # usb drive auto-mount 
+    - ranger # term file manager
     
     # Example:
     # - tilix
