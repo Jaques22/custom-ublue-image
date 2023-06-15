@@ -68,7 +68,7 @@ rpm:
     - iasl
     - xdg-desktop-portal-hyprland
     - hyprland
-    - waybar-hyprland
+    - waybar
     - hyprpaper
     - dunst
     - brightnessctl
