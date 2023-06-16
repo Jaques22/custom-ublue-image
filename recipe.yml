@@ -11,7 +11,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 # builds with the tag (all uBlue images do this).
 fedora-version: 38
 # This description will be visible in the container metadata.
-description: Universal Blue main (https://ublue.it/) but with hyprland and some additional packages.
+description: Universal Blue Main (https://ublue.it/) with Hyprland and some additional packages.
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
 # Any files that aren't listed here won't be executed automatically, which
@@ -41,11 +41,10 @@ rpm:
   # which greatly simplifies future maintenance of your custom recipe.
   repos:
   # Example (which also demonstrates version number expansion):
-  # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
   #- https://copr.fedorainfracloud.org/coprs/jaques22/xdg-desktop-portal-hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-xdg-desktop-portal-hyprland-fedora-%FEDORA_VERSION%.repo
   #- https://copr.fedorainfracloud.org/coprs/jaques22/hyprland/repo/fedora-%FEDORA_VERSION%/jaques22-hyprland-fedora-%FEDORA_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-38/solopasha-hyprland-fedora-38.repo
-  #- https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-%FEDORA_VERSION%/eddsalkield-swaylock-effects-fedora-%FEDORA_VERSION%.repo
+  
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
   # performed via rpm-ostree during the image build, and will be pre-installed
@@ -59,31 +58,33 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
 
-    # Add your own below:
+    # For me
     - zsh
-    - rclone
+    - rclone # onedrive syncing
     - neovim
-    - 'gcc-c++'
-    - gh
-    - iasl
-    - xdg-desktop-portal-hyprland
+    - ranger # term file manager
+    - 'gcc-c++' # required for github?
+    - gh # github creds
+    - iasl # asus laptop build audio drivers
+    
+    # Stuff for Hyprland
     - hyprland
-    - waybar
-    - hyprpaper
-    - dunst
+    - xdg-desktop-portal-hyprland
+    - waybar # status bar
+    - wofi
+    - hyprpaper # wallpaper
+    - hyprshot # screenshots
+    - dunst # notifs
+    - swaylock # lock screen
+    - swayidle # lock screen on idle
+    - network-manager-applet # network in waybar tray
+    - blueman # bluetooth in waybar tray
+    - blueman-nautilus
     - brightnessctl
     - fontawesome-fonts
-    - swaylock
-    - swayidle
-    - network-manager-applet
-    - blueman
-    - blueman-nautilus
     - udiskie # usb drive auto-mount 
-    - ranger # term file manager
     - greetd
     
-    # Example:
-    # - tilix
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:
