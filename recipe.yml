@@ -80,6 +80,7 @@ rpm:
     - blueman-nautilus
     - udiskie # usb drive auto-mount 
     - ranger # term file manager
+    - greetd
     
     # Example:
     # - tilix
