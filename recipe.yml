@@ -71,6 +71,7 @@ rpm:
     - hyprland
     - xdg-desktop-portal-hyprland
     - waybar # status bar
+    - wofi
     - hyprpaper # wallpaper
     - hyprshot # screenshots
     - dunst # notifs
