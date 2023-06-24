@@ -3,6 +3,25 @@
 
 See the [Make Your Own -page in the documentation](https://ublue.it/making-your-own/) for quick setup instructions for setting up your own repository based on this template.
 
+## Installation
+
+> **Warning**
+> This is an experimental feature and should not be used in production, try it in a VM for a while!
+
+To rebase an existing Silverblue/Kinoite installation to the latest build:
+
+```
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:latest
+```
+
+This repository builds date tags as well, so if you want to rebase to a particular day's build:
+
+```
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:20230403
+```
+
+The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
 ## Customization
 
 If you want to add custom configuration files, you can just add them in the `etc` directory. If you need to add other directories, you can look at the Containerfile to see how it's done. Writing to any directories under `/var` in Fedora Silverblue are not supported and will not work, as those are user-managed.
@@ -42,25 +61,6 @@ matrix:
 Its configuration can be found in `/usr/share/ublue-os/firstboot/yafti.yml` of the installed OS. It includes an optional selection of Flatpaks to install, along with a new group that's automatically added for all Flatpaks declared in `recipe.yml`. You can look at what's done in the config and modify it to your liking (in the repository, before building the image, since the installed system file is immutable).
 
 The files `/usr/etc/profile.d/ublue-firstboot.sh` and `/usr/etc/skel.d/.config/autostart/ublue-firstboot.desktop` set up `yafti` so that it starts on boot, which means that you shouldn't touch those files if you wish to retain that functionality.
-
-## Installation
-
-> **Warning**
-> This is an experimental feature and should not be used in production, try it in a VM for a while!
-
-To rebase an existing Silverblue/Kinoite installation to the latest build:
-
-```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:latest
-```
-
-This repository builds date tags as well, so if you want to rebase to a particular day's build:
-
-```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jaques22/custom-ublue-image:20230403
-```
-
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
 ## Just
 
