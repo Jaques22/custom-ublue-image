@@ -1,47 +1,14 @@
-# custom-ublue-image
-
-[![build-ublue](https://github.com/jaques22/custom-ublue-image/actions/workflows/build.yml/badge.svg)](https://github.com/jaques22/custom-ublue-image/actions/workflows/build.yml)
-
-This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
-
-For more info, check out the [uBlue homepage](https://ublue.it/) and the [main uBlue repo](https://github.com/ublue-os/main/)
 
 ## Getting started
 
 See the [Make Your Own -page in the documentation](https://ublue.it/making-your-own/) for quick setup instructions for setting up your own repository based on this template.
 
-Don't worry, it only requires some basic knowledge about using the terminal and git.
-
-> **Note**
-> Everywhere in this repository, make sure to replace `jaques22/custom-ublue-image` with the details of your own repository. Unless you used [`create-ublue-image`](https://github.com/EinoHR/create-ublue-image), in which case the previous repo identifier should already be your repo's details.
-
 ## Customization
-
-The easiest way to start customizing is by looking at and modifying `recipe.yml`. It's documented using comments and should be pretty easy to understand.
-
-For the base-image field, you can use any other native container image. You will get all the features of that image, plus the ones added here! Check out the [uBlue images list](https://ublue.it/images/) to decide what to use!
 
 If you want to add custom configuration files, you can just add them in the `etc` directory. If you need to add other directories, you can look at the Containerfile to see how it's done. Writing to any directories under `/var` in Fedora Silverblue are not supported and will not work, as those are user-managed.
 
 > **Note**
 > The configuration files you put in the `etc` directory are actually added to `/usr/etc/` where they get applied to your local `/etc/` when rebasing to or updating the image. If a config file in `/etc/` has been changed, the changes won't be overridden, but the new version will be available in `/usr/etc/`. Run `sudo ostree admin config-diff` to see the difference between `/etc/` and `/usr/etc/` (`man ostree-admin-config-diff` for further documentation).
-
-### Custom build scripts
-
-If you want to execute custom shell scripts or commands in the image build, you shouldn't edit `build.sh` or the `Containerfile` directly.
-
-Instead, you can create shell scripts in the `scripts/` directory (look at the `example.sh`). After creating your scripts, enable them in the `scripts:` section of your `recipe.yml`, within the specific "build stage" category where the scripts are intended to be executed.
-
-Read [the README in the `scripts/` directory](https://github.com/jaques22/custom-ublue-image/blob/main/scripts/README.md) for more information.
-
-### Custom package repositories
-
-If you want to add custom package repositories to your image, you can include them in the `recipe.yml` as a list of URLs under the `rpm.repos:` section. They **must** be proper `.repo` files (such as `https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-38/atim-starship-fedora-38.repo`). In the build process, the `.repo` file will be downloaded and placed inside `/etc/yum.repos.d/` where rpm-ostree can access it.
-
-You can use this to add [COPR repositories](https://copr.fedorainfracloud.org/) to your image.
-COPR is like the Arch User Repository for Fedora, where you can find extra packages that wouldn't otherwise be available. The repositories are community-created, so use them at your own risk. [Read more](https://docs.pagure.org/copr.copr/user_documentation.html)
-
-Tip: You can use the magic string `%FEDORA_VERSION%` in your repo URLs, to automatically refer to the correct repository for your current Fedora version.
 
 ### Building multiple images
 
